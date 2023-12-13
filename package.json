@@ -4,7 +4,9 @@
   "type": "module",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "server": "npx nodemon src/server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ruancs/diowallet-api.git"

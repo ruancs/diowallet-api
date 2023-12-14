@@ -9,7 +9,7 @@ npx nodemon src/server.js
 ## projeto
 
 O projeto consiste em  adicionar e remover valores em uma carteira virtual. Para isso se utiliza as libs MERN
-MongoDB
-ExpressJS
-ReactJS
-NodeJS
+- MongoDB
+- ExpressJS
+- ReactJS
+- NodeJS

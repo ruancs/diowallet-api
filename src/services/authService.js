@@ -10,7 +10,18 @@ if(userExists) throw new Error("usuario ja existe!!!")
 
 return await authRepository.create({...body, password: hashPassword})
 
-
 }
 
-export default {signup,}
+async function signin(body){
+
+    const userExists = await authRepository.findByEmail(body.email);
+    if(!userExists) throw new Error("email ou senha inválidos!");
+    
+    const passwordOk = bcrypt.compareSync(body.password, userExists.password)
+    if(!passwordOk) throw new Error("email ou senha inválidos!");
+
+    return authRepository.generateToken(userExists._id);
+}
+
+
+export default {signup,signin}

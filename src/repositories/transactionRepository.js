@@ -12,4 +12,8 @@ async function updateTransaction(idTransaction, updateItems){
     return await TransactionSchema.findOneAndUpdate({_id: idTransaction}, {$set: updateItems}, { new: true})
 }
 
-export default { create , findAllByUser, updateTransaction}
+async function deleteTransaction(idTransaction){
+    return await TransactionSchema.findByIdAndDelete({_id: idTransaction})
+}
+
+export default { create , findAllByUser, updateTransaction, deleteTransaction }

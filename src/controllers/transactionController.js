@@ -43,6 +43,22 @@ async function updateTransaction(req, res){
     }
 
 }
+ async function deleteTransaction(req, res){
+    
+    try {
+        const idTransaction = req.body._id;
+        const deletedTransaction = await transactionService.deleteTransaction(idTransaction);
 
+        if (!deletedTransaction) {
+            return res.status(404).json({ message: 'Transação não encontrada' });
+        }
+        return res.status(200).json({ message: 'Transação excluída com sucesso', data: deletedTransaction });
+        
+    } catch (error) {
+        res.status(500).send(error.message);
+        
+    }
 
-export default { create , findAllByUser,updateTransaction }
+ }
+
+export default { create , findAllByUser, updateTransaction, deleteTransaction}

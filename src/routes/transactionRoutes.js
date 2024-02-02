@@ -23,9 +23,9 @@ transactionRouter.patch(
         transactionController.updateTransaction
     );
 
-transactionRouter.patch(
+transactionRouter.delete(
         "/delete",
-            transactionController.updateTransaction
+            transactionController.deleteTransaction
         );
 
     

@@ -16,4 +16,9 @@ async function updateTransaction(idTransaction, updateItems){
     return await transactionRepository.updateTransaction(idTransaction, updateItems)
 }
 
-export default { create, findAllByUser, updateTransaction }
+async function deleteTransaction(idTransaction){
+    if(!idTransaction)throw new Error("id necessário!");
+    return await transactionRepository.deleteTransaction(idTransaction)
+}
+
+export default { create, findAllByUser, updateTransaction, deleteTransaction }

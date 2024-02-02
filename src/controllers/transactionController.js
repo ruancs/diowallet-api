@@ -12,17 +12,37 @@ async function create(req, res) {
     }
 }
 
+
 async function findAllByUser(req, res){
     const { _id:id } = res.locals.user
-
+    
     try {
         const transactions = await transactionService.findAllByUser(id)
         return res.send(transactions);
         
     } catch (error) {
-        res.status(500).send(error.message);
+        return res.status(500).send(error.message);
+    }
+    
+}
+
+async function updateTransaction(req, res){
+
+    try{
+        const idTransaction = req.body._id;
+        const {...updateItems} = req.body;
+        const updatedTransaction =  await transactionService.updateTransaction(idTransaction, updateItems)
+
+        if(!updatedTransaction) {
+            return res.status(404).send(error.message)
+        }
+        return res.status(200).send(updatedTransaction)
+
+    } catch (error) {
+        return res.status(500).send(error.message);
     }
 
 }
 
-export default { create , findAllByUser}
+
+export default { create , findAllByUser,updateTransaction }

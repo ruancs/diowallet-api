@@ -16,7 +16,6 @@ async function generateToken(id){
 
 async function findById(id){
     const user = await UserSchema.findById(id);
-    console.log(id)
     return user
 } 
 

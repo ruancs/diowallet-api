@@ -11,4 +11,9 @@ async function findAllByUser(id){
     return await transactionRepository.findAllByUser(id)
 }
 
-export default { create, findAllByUser }
+async function updateTransaction(idTransaction, updateItems){
+    if(!idTransaction || !updateItems) throw new Error("id e campo necessários!")
+    return await transactionRepository.updateTransaction(idTransaction, updateItems)
+}
+
+export default { create, findAllByUser, updateTransaction }

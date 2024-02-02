@@ -18,4 +18,16 @@ transactionRouter.get(
      transactionController.findAllByUser
     );
 
+transactionRouter.patch(
+    "/update",
+        transactionController.updateTransaction
+    );
+
+transactionRouter.patch(
+        "/delete",
+            transactionController.updateTransaction
+        );
+
+    
+
 export default transactionRouter;

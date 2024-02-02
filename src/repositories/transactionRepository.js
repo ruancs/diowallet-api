@@ -8,4 +8,8 @@ async function findAllByUser(id){
     return await TransactionSchema.find({ userId: id });
 }
 
-export default { create , findAllByUser}
+async function updateTransaction(idTransaction, updateItems){
+    return await TransactionSchema.findOneAndUpdate({_id: idTransaction}, {$set: updateItems}, { new: true})
+}
+
+export default { create , findAllByUser, updateTransaction}

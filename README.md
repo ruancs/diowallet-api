@@ -11,7 +11,7 @@
 - Este é o backend do projeto Diowallet, projeto feito com a stack MERN (MongoDB, Express, React e Node) ministrado na DIO.
 - Utiliza arquitetura MSC (Model, Service, Controller) que divide o código em camadas, para mais fácil entendimento e manutenção.
 
-## 🚀 Instalando <nome_do_projeto>
+## 🚀 Instalando
 
 Para instalar, siga estas etapas:
 

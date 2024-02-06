@@ -28,6 +28,4 @@ transactionRouter.delete(
             transactionController.deleteTransaction
         );
 
-    
-
 export default transactionRouter;

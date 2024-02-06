@@ -12,7 +12,6 @@ async function create(req, res) {
     }
 }
 
-
 async function findAllByUser(req, res){
     const { _id:id } = res.locals.user
     
@@ -43,6 +42,7 @@ async function updateTransaction(req, res){
     }
 
 }
+
  async function deleteTransaction(req, res){
     
     try {
@@ -59,6 +59,6 @@ async function updateTransaction(req, res){
         
     }
 
- }
+}
 
-export default { create , findAllByUser, updateTransaction, deleteTransaction}
+export default { create , findAllByUser, updateTransaction, deleteTransaction }
